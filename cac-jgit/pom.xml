@@ -25,6 +25,7 @@
 
 	<build>
 		<plugins>
+			<!-- Build an uber-jar ("-cli") -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>3.0.0</version>
@@ -36,11 +37,19 @@
 				<executions>
 					<execution>
 						<id>make-assembly</id>
-						<phase>package</phase>
+						<phase>prepare-package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
 						<configuration>
+							<!--
+								Load a custom "assmembly descriptor"
+								so that maven doesn't choke on "cli" being an
+								unknown classifier when deploying to a maven repo
+							-->
+							<descriptors>
+								<descriptor>../cli-assembly.xml</descriptor>
+							</descriptors>
 							<archive>
 								<manifest>
 									<mainClass>org.eclipse.jgit.pgm.JgitCac</mainClass>
