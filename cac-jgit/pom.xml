@@ -32,17 +32,16 @@
 				<executions>
 					<execution>
 						<id>make-assembly</id>
-						<phase>prepare-package</phase>
+						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
 						<configuration>
-							<appendAssemblyId>false</appendAssemblyId>
-							<finalName>${project.artifactId}-${project.version}.cli</finalName>
+							<appendAssemblyId>true</appendAssemblyId>
 							<!--
-								Load a custom "assmembly descriptor"
-								so that maven doesn't choke on "cli" being an
-								unknown classifier when deploying to a maven repo
+								Specify the "assmembly descriptor"
+								so that maven doesn't choke when deploying to
+								a maven repo.
 							-->
 							<descriptorRefs>
 								<descriptorRef>jar-with-dependencies</descriptorRef>
