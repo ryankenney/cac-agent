@@ -30,7 +30,7 @@
 				<version>3.0.0</version>
 				<configuration>
 					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
+						<descriptorRef>cli</descriptorRef>
 					</descriptorRefs>
 				</configuration>
 				<executions>
@@ -41,8 +41,6 @@
 							<goal>single</goal>
 						</goals>
 						<configuration>
-							<finalName>${project.artifactId}</finalName>
-							<appendAssemblyId>false</appendAssemblyId>
 							<archive>
 								<manifest>
 									<mainClass>com.moesol.cac.relay.Main</mainClass>
