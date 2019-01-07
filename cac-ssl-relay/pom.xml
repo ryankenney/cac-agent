@@ -25,15 +25,10 @@
 
 	<build>
 		<plugins>
-			<!-- Build an uber-jar ("-cli") -->
+			<!-- Build an uber-jar -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>3.0.0</version>
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>cli</descriptorRef>
-					</descriptorRefs>
-				</configuration>
 				<executions>
 					<execution>
 						<id>make-assembly</id>
