@@ -42,17 +42,19 @@
 							<goal>single</goal>
 						</goals>
 						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<finalName>${project.artifactId}-${project.version}.cli</finalName>
 							<!--
 								Load a custom "assmembly descriptor"
 								so that maven doesn't choke on "cli" being an
 								unknown classifier when deploying to a maven repo
 							-->
-							<descriptors>
-								<descriptor>../cli-assembly.xml</descriptor>
-							</descriptors>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
 							<archive>
 								<manifest>
-									<mainClass>com.moesol.cac.relay.Main</mainClass>
+									<mainClass>org.eclipse.jgit.pgm.JgitCac</mainClass>
 								</manifest>
 							</archive>
 						</configuration>
